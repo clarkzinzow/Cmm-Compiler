@@ -68,9 +68,6 @@ terminal                ASSIGN;
 
 
 /* Nonterminals
- *
- * NOTE: You will need to add more nonterminals to this list as you
- *       add productions to the grammar below.
  */
 non terminal ProgramNode      program;
 non terminal LinkedList       declList;
@@ -96,7 +93,7 @@ non terminal ExpNode          loc;
 non terminal IdNode           id;
  
  
-/* NOTE: Add precedence and associativity declarations here */
+/* Precedence and associativity declarations here */
 precedence right ASSIGN;
 precedence left OR;
 precedence left AND;
@@ -109,8 +106,6 @@ start with program;
 
 
 /* Grammar with actions
- *
- * NOTE: add more grammar rules below
  */
 program         ::= declList: d
                 {: RESULT = new ProgramNode(new DeclListNode(d));

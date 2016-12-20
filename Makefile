@@ -11,12 +11,15 @@ JCC = javac
 JVM = java
 SRCDIR = src
 DEPDIR = deps
+TESTDIR = test
+DEMODIR = demo
 CP = $(SRCDIR):$(DEPDIR)
 CPFLAGS = -cp $(CP)
 JFLAGS = -g $(CPFLAGS)
 
 SRCEXT = java
 CLSEXT = class
+ASEXT = s
 
 SRC = $(wildcard $(SRCDIR)/*.$(SRCEXT))
 CLS = $(SRC:.$(SRCEXT)=.$(CLSEXT))
@@ -25,7 +28,7 @@ VPATH = $(SRCDIR):$(DEPDIR)
 
 RM = rm
 RMFLAGS = -f
-RMTARGETS = $(addprefix $(SRCDIR)/, *~ *.class parser.java CMM.jlex.java sym.java) 
+RMTARGETS = $(addprefix $(SRCDIR)/, *~ *.class parser.java CMM.jlex.java sym.java) $(TESTDIR)/*.$(ASEXT) 
 
 .SUFFIXES: .java .class
 
