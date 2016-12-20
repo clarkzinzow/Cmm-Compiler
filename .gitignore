@@ -1,3 +1,6 @@
+# Project specific
+test/test*.*
+
 # OS generated files, temporary files, buffers, and backups #
 *~
 .fuse_hidden*

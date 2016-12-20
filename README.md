@@ -21,18 +21,26 @@ $ make clean
 ```
 $ make
 ```
-5. Run the CompilerTester on the "Hello world!" C-- program, hello.txt, residing in the test folder.
+5. If you want to see a simple compilation, run the CompilerTester on the "Hello, World!" C--
+program, hello.cmm, residing in the demo folder.
 ```
-$ java -cp src:deps CompilerTester test/hello.txt test/hello.s
+$ java -cp src:deps CompilerTester demo/hello.cmm demo/hello.s
 ```
-6. Check out the generated MIPS assembly with your favorite text editor.
+6. Then check out the generated MIPS assembly with your favorite text editor.
 ```
-$ vim test/hello.s
+$ vim demo/hello.s
 ```
-7. If you want to see how the compiler handles errors, run the CompilerTester on the error-ridden
+7. If you want to see a more complex compilation, check out the demo C-- program, demo.cmm, residing
+   in the demo folder, and compare it to the provided MIPS assembly file: demo.s.  You can also
+   compile the demo C-- program analogous to the hello.cmm program:
+```
+$ java -cp src:deps CompilerTester demo/demo.cmm demo/demo.s
+```
+
+If you want to see how the compiler handles errors, run the CompilerTester on the error-ridden
    C-- program, error.txt, residing in the test folder.
 ```
-$ java -cp src:deps CompilerTester test/error.txt test/error.s
+$ java -cp src:deps CompilerTester demo/error.cmm demo/error.s
 ```
 This will print the errors encountered and generate an empty MIPS assembly file, error.s.
 
@@ -50,9 +58,9 @@ $ wget -O /path/to/download/folder/qtspim_9.1.17_linux64.deb https://sourceforge
 $ sudo dpkg -i /path/to/download/folder/qtspim_9.1.17_linux64.deb
 ```
 3. Navigate to the Cmm-Compiler repository directory.
-4. Simulate the generated MIPS32 assembly code in hello.s using QtSpim.
+4. Simulate the generated MIPS32 assembly code in demo.s using QtSpim.
 ```
-$ QtSpim test/hello.s
+$ qtspim demo/demo.s
 ```
 
 ## The C-- Language

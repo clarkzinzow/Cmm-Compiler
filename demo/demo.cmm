@@ -1,0 +1,123 @@
+int glob_int;
+bool glob_bool;
+
+int demo_int_func(int x) {
+  while(x <= 10) {
+    x = 2*x;
+  }
+  return x;
+}
+
+bool demo_bool_func(int x, bool b) {
+  return !b && (x == 16);
+}
+
+void recurs_func_call() {
+  if(glob_int > 0) {
+    glob_int--;
+    recurs_func_call();
+  }
+}
+
+void take_over(int a, int b, bool c, bool d) {
+  if(a + b == 3) {
+    cout << "Evaluating arithmetic in condition == neat!\n";
+  }
+  glob_int = demo_int_func(b);
+  glob_bool = demo_bool_func(glob_int, d);
+  if(glob_bool) {
+    cout << "Working with global values as well.\n";
+  }
+  cout << "Calling a recursive function that updates a global int...\n";
+  recurs_func_call();
+  cout << "Recursive function has returned after decrementing global int to 0.\n";
+}
+
+void main() {
+  int a;
+  int b;
+  bool c;
+  bool d;
+  bool e;
+  bool f;
+  cout << "Here is a demonstration of the C-- programming language.\n";
+  a = 2;
+  a++;
+  a--;
+  a = a + 9;
+  a = a - 3;
+  a = a * 2;
+  a = a / 4; // a = 4
+  b = 3;
+  b = a + b; // b = 7
+  b = (a*b)/2 + 5 - a; // b = 15
+  b = b / (a*2 - 3); // b = 3
+  c = true;
+  c = !c; // c = false
+  if(!c) {
+    cout << "c is false.\n";
+  }
+  d = false;
+  d = !(c || d); // d = true
+  if(d) {
+    cout << "d is true.\n";
+  }
+  e = d || !c; // e = true
+
+  if(e) {
+    cout << "Printing from inside an if statement because e is true.\n";
+  }
+  else {
+    cout << "1: Should not be reached.\n";
+  }
+
+  if(e && d) {
+    cout << "e && d should evaluate to true, since both e and d are true.\n";
+  }
+
+  if(c || d) {
+    cout << "e || d should also evaluate to true, since d is true.\n";
+  }
+
+  f = false;
+  if(f || c) {
+    cout << "2: Should not be reached.\n";
+  }
+  else {
+    cout << "f || c should evaluate to false, since both f and c are false.\n";
+  }
+  
+  if(a == b) {
+    cout << "3: Should not be reached.\n";
+  }
+  else {
+    cout << "Printing from inside an else statement.\n";
+  }
+
+  if(a > b) {
+    cout << "a is indeed greater than b, since 4 > 3.\n";
+  }
+
+  if(b < a) {
+    cout << "b is less than a, since 3 < 4.\n";
+  }
+
+  b++; // b = 4 
+  if(a == b) {
+    cout << "NOW, a does equal b.\n";
+  }
+
+  a = demo_int_func(b+1); // a = 20 
+  if(a == 20) {
+    cout << "demo_int_func returned 20, as expected.\n";
+  }
+  else {
+    cout << "error\n";
+  }
+
+  if(demo_bool_func(16, false)) {
+    cout << "demo_bool_func returned true, as expected.\n";
+  }
+
+  take_over(1, 2, true, false);
+}
