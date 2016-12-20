@@ -4,52 +4,52 @@
  */
 abstract public class Type {
 
-    /**
-     * default constructor
-     */
-    public Type() {
-    }
+  /**
+   * default constructor
+   */
+  public Type() {
+  }
 
-    /**
-     * every subclass must provide a toString method and an equals method
-     */
-    abstract public String toString();
-    abstract public boolean equals(Type t);
+  /**
+   * every subclass must provide a toString method and an equals method
+   */
+  abstract public String toString();
+  abstract public boolean equals(Type t);
 
-    /**
-     * default methods for "isXXXType"
-     */
-    public boolean isErrorType() {
-        return false;
-    }
+  /**
+   * default methods for "isXXXType"
+   */
+  public boolean isErrorType() {
+    return false;
+  }
 
-    public boolean isIntType() {
-        return false;
-    }
+  public boolean isIntType() {
+    return false;
+  }
 
-    public boolean isBoolType() {
-        return false;
-    }
+  public boolean isBoolType() {
+    return false;
+  }
 
-    public boolean isVoidType() {
-        return false;
-    }
-    
-    public boolean isStringType() {
-        return false;
-    }
+  public boolean isVoidType() {
+    return false;
+  }
 
-    public boolean isFnType() {
-        return false;
-    }
+  public boolean isStringType() {
+    return false;
+  }
 
-    public boolean isStructType() {
-        return false;
-    }
-    
-    public boolean isStructDefType() {
-        return false;
-    }
+  public boolean isFnType() {
+    return false;
+  }
+
+  public boolean isStructType() {
+    return false;
+  }
+
+  public boolean isStructDefType() {
+    return false;
+  }
 }
 
 // **********************************************************************
@@ -57,17 +57,17 @@ abstract public class Type {
 // **********************************************************************
 class ErrorType extends Type {
 
-    public boolean isErrorType() {
-        return true;
-    }
+  public boolean isErrorType() {
+    return true;
+  }
 
-    public boolean equals(Type t) {
-        return t.isErrorType();
-    }
+  public boolean equals(Type t) {
+    return t.isErrorType();
+  }
 
-    public String toString() {
-        return "error";
-    }
+  public String toString() {
+    return "error";
+  }
 }
 
 // **********************************************************************
@@ -75,17 +75,17 @@ class ErrorType extends Type {
 // **********************************************************************
 class IntType extends Type {
 
-    public boolean isIntType() {
-        return true;
-    }
+  public boolean isIntType() {
+    return true;
+  }
 
-    public boolean equals(Type t) {
-        return t.isIntType();
-    }
+  public boolean equals(Type t) {
+    return t.isIntType();
+  }
 
-    public String toString() {
-        return "int";
-    }
+  public String toString() {
+    return "int";
+  }
 }
 
 // **********************************************************************
@@ -93,17 +93,17 @@ class IntType extends Type {
 // **********************************************************************
 class BoolType extends Type {
 
-    public boolean isBoolType() {
-        return true;
-    }
+  public boolean isBoolType() {
+    return true;
+  }
 
-    public boolean equals(Type t) {
-        return t.isBoolType();
-    }
+  public boolean equals(Type t) {
+    return t.isBoolType();
+  }
 
-    public String toString() {
-        return "bool";
-    }
+  public String toString() {
+    return "bool";
+  }
 }
 
 // **********************************************************************
@@ -111,17 +111,17 @@ class BoolType extends Type {
 // **********************************************************************
 class VoidType extends Type {
 
-    public boolean isVoidType() {
-        return true;
-    }
+  public boolean isVoidType() {
+    return true;
+  }
 
-    public boolean equals(Type t) {
-        return t.isVoidType();
-    }
+  public boolean equals(Type t) {
+    return t.isVoidType();
+  }
 
-    public String toString() {
-        return "void";
-    }
+  public String toString() {
+    return "void";
+  }
 }
 
 // **********************************************************************
@@ -129,17 +129,17 @@ class VoidType extends Type {
 // **********************************************************************
 class StringType extends Type {
 
-    public boolean isStringType() {
-        return true;
-    }
+  public boolean isStringType() {
+    return true;
+  }
 
-    public boolean equals(Type t) {
-        return t.isStringType();
-    }
+  public boolean equals(Type t) {
+    return t.isStringType();
+  }
 
-    public String toString() {
-        return "String";
-    }
+  public String toString() {
+    return "String";
+  }
 }
 
 // **********************************************************************
@@ -147,40 +147,40 @@ class StringType extends Type {
 // **********************************************************************
 class FnType extends Type {
 
-    public boolean isFnType() {
-        return true;
-    }
+  public boolean isFnType() {
+    return true;
+  }
 
-    public boolean equals(Type t) {
-        return t.isFnType();
-    }
+  public boolean equals(Type t) {
+    return t.isFnType();
+  }
 
-    public String toString() {
-        return "function";
-    }
+  public String toString() {
+    return "function";
+  }
 }
 
 // **********************************************************************
 // StructType
 // **********************************************************************
 class StructType extends Type {
-    private IdNode myId;
-    
-    public StructType(IdNode id) {
-        myId = id;
-    }
-    
-    public boolean isStructType() {
-        return true;
-    }
+  private IdNode myId;
 
-    public boolean equals(Type t) {
-        return t.isStructType();
-    }
+  public StructType(IdNode id) {
+    myId = id;
+  }
 
-    public String toString() {
-        return myId.name();
-    }
+  public boolean isStructType() {
+    return true;
+  }
+
+  public boolean equals(Type t) {
+    return t.isStructType();
+  }
+
+  public String toString() {
+    return myId.name();
+  }
 }
 
 // **********************************************************************
@@ -188,15 +188,15 @@ class StructType extends Type {
 // **********************************************************************
 class StructDefType extends Type {
 
-    public boolean isStructDefType() {
-        return true;
-    }
+  public boolean isStructDefType() {
+    return true;
+  }
 
-    public boolean equals(Type t) {
-        return t.isStructDefType();
-    }
+  public boolean equals(Type t) {
+    return t.isStructDefType();
+  }
 
-    public String toString() {
-        return "struct";
-    }
+  public String toString() {
+    return "struct";
+  }
 }
