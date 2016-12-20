@@ -6,7 +6,7 @@ lexical analyzer (scanner), syntax analyzer (syntax error detection and builds a
 
 ## Getting Started
 
-Testing the compiler is very easy.
+Trying out the compiler is very easy.
 
 1. Clone or download this repository.
 2. Navigate to the repository directory.
