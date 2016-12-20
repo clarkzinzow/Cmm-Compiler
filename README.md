@@ -27,7 +27,7 @@ $ java -cp src:deps CompilerTester test/hello.txt test/hello.s
 ```
 6. Check out the generated MIPS assembly with your favorite text editor.
 ```
-$ nano test/hello.s
+$ vim test/hello.s
 ```
 7. If you want to see how the compiler handles errors, run the CompilerTester on the error-ridden
    C-- program, error.txt, residing in the test folder.
