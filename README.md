@@ -1,6 +1,6 @@
 # C-- Compiler
 
-A compiler for the fictional programming language C--, a subset of C.  This compiler consists of a
+A compiler for the fictional programming language C--, a subset of C.  Written in Java and using the LALR generator JavaCUP, this compiler consists of a
 lexical analyzer (scanner), syntax analyzer (syntax error detection and builds an abstract syntax tree), semantic analyzer (name and type analysis), and code generator (MIPS assembly generation.)
 
 
