@@ -38,7 +38,7 @@ $ java -cp src:deps CompilerTester demo/demo.cmm demo/demo.s
 ```
 
 If you want to see how the compiler handles errors, run the CompilerTester on the error-ridden
-   C-- program, error.txt, residing in the test folder.
+   C-- program, error.cmm, residing in the test folder.
 ```
 $ java -cp src:deps CompilerTester demo/error.cmm demo/error.s
 ```
